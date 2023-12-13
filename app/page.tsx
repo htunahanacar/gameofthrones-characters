@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 
 // id:0001 - Sayfa ismini değiştirmek için eklendi.
 export const metadata: Metadata = {
-  title: 'Game of Thrones - Characters',
+  title: 'Harry Potter',
 }
 
 // id:0000 - Sayfada gösterilen içerikler

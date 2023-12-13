@@ -4,7 +4,7 @@ import Card from '../Components/Card'
 import { Grid } from '@chakra-ui/react'
 
 export const metadata: Metadata = {
-  title: 'Game of Thrones - Character Cards',
+  title: 'Harry Potter',
 }
 
 export default async function Page() {
