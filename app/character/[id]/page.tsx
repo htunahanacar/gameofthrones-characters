@@ -1,3 +1,47 @@
-export default function CharacterDetailPage({ params }: { params: { id: string } }) {
-    return <div>My Character Id: {params.id}</div>
+import Image from "next/image";
+import CHARACTERS from "../../constants/characters.json";
+import { Box, Container, Grid, GridItem } from "@chakra-ui/react";
+
+const getCharacter = (id: string) => {
+  const foundCharacter = CHARACTERS.find(
+    (character) => character.id === id
+  );
+  return foundCharacter
+}
+
+export default function CharacterDetailPage({
+  params
+}: {
+  params: { id: string };
+}) {
+
+  const foundCharacter = getCharacter(params.id);
+  if (!foundCharacter) {
+    return (
+      <div>Character not found</div>
+    )
   }
+  return (
+    <div>
+      {foundCharacter && (
+        <div>
+          <Container maxW='container.2xl' padding='6' bg='green.50' centerContent>
+            <Grid templateColumns='repeat(2, 1fr)' gap={5}>
+              <GridItem padding='6' ><Image src={foundCharacter.image} width={250} height={300} alt={""} /><br /></GridItem>
+              <GridItem padding='6' >
+                Character: <b>{foundCharacter.name}</b><br />
+                Alternative Names: <b>{foundCharacter.alternate_names[0]}</b><br />
+                Species: <b>{foundCharacter.species}</b><br />
+                Gender: <b>{foundCharacter.gender}</b><br />
+                House: <b>{foundCharacter.house}</b><br />
+                Date of Birth: <b>{foundCharacter.dateOfBirth}</b><br />
+                Ancestry: <b>{foundCharacter.ancestry}</b><br />
+                Eye Colour: <b>{foundCharacter.eyeColour}</b><br /></GridItem>
+            </Grid>
+          </Container>
+        </div>
+      )
+      }
+    </div>
+  );
+}
