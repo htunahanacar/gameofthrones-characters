@@ -1,40 +1,19 @@
-import { Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Stack, Text } from "@chakra-ui/react";
+import { Metadata } from 'next' // id:0001 - Sayfa ismini değiştirmek için eklendi.
+import Link from 'next/link' // id:0002 - Linkleri eklemek için eklendi.
+import { useRouter } from 'next/navigation'
 
+// id:0001 - Sayfa ismini değiştirmek için eklendi.
+export const metadata: Metadata = {
+    title: 'Game of Thrones - Characters',
+  }
+
+// id:0000 - Sayfada gösterilen içerikler
 export default function Home() {
-  return (
-    <main>
-      <Card maxW='sm'>
-        <CardBody>
-          <Image
-            src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-            alt='Green double couch with wooden legs'
-            borderRadius='lg'
-          />
-          <Stack mt='6' spacing='3'>
-            <Heading size='md'>Living room Sofa</Heading>
-            <Text>
-              This sofa is perfect for modern tropical spaces, baroque inspired
-              spaces, earthy toned spaces and for people who love a chic design with a
-              sprinkle of vintage design.
-            </Text>
-            <Text color='blue.600' fontSize='2xl'>
-              $450
-            </Text>
-          </Stack>
-        </CardBody>
-        <Divider />
-        <CardFooter>
-          <ButtonGroup spacing='2'>
-            <Button variant='solid' colorScheme='blue'>
-              Buy now
-            </Button>
-            <Button variant='ghost' colorScheme='blue'>
-              Add to cart
-            </Button>
-          </ButtonGroup>
-        </CardFooter>
-      </Card>
-
+  return (<main>
+    <div>
+      <h1>Hello, This is Index Page!</h1>
+      <p>Click to reach <b><Link href="/characters">Character Cards</Link></b> Page</p>
+    </div>
     </main>
   )
 }
