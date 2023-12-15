@@ -13,7 +13,7 @@ interface CardProps {
 function Card({ name, species, image, house, id }: CardProps) {
     return (
         <Link href={`/character/${id}`}>
-            <ChakraCard maxW='sm'>
+            <ChakraCard>
                 <CardBody>
                     <Image src={image} alt={name} width={250} height={300} />
                     <Stack mt='6' spacing='3'>

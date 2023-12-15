@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
-import CHARACTERS from "../constants/characters.json"
-import Card from '../Components/Card'
-import { Grid } from '@chakra-ui/react'
+import Search from '../Components/Search'
+import { Container } from '@chakra-ui/react'
 
 export const metadata: Metadata = {
   title: 'Harry Potter',
@@ -9,11 +8,11 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   return (
-    <Grid bg='green.50' justifyItems={'center'} templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', xl: 'repeat(3, 1fr)' }} gap={6}>
-      {CHARACTERS.map((character) => (
-        <Card key={character.id} name={character.name} species={character.species} image={character.image} house={character.house} id={character.id} />
-      ))}
-    </Grid>
+    <div>
+      <Container maxW='5xl' bg='green.50' p='6'>
+        <Search />
+      </Container>
+    </div>
   )
 }
 
