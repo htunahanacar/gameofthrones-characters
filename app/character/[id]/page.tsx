@@ -27,8 +27,8 @@ export default function CharacterDetailPage({
         <div>
           <Container maxW='container.2xl' padding='6' bg='green.50' centerContent>
             <Grid templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }} gap={5}>
-              <Center><GridItem padding='6'><Image src={foundCharacter.image} width={250} height={300} alt={""} /><br /></GridItem></Center>
-              <GridItem padding='6' >
+              <Center><GridItem padding='3'><Image src={foundCharacter.image} width={250} height={300} alt={""} /></GridItem></Center>
+              <GridItem padding='3' >
                 Character: <b>{foundCharacter.name}</b><br />
                 Alternative Names: <b>{foundCharacter.alternate_names[0]}</b><br />
                 Species: <b>{foundCharacter.species}</b><br />

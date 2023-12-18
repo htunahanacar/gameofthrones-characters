@@ -20,7 +20,6 @@ function Search() {
         ()=> {
             const Data = CHARACTERS.filter((character) => character.name.toLowerCase().startsWith(input.toLowerCase()))
             setFilteredData(Data)
-            console.log("Data2",Data)
     }, [input])
 
     return (
