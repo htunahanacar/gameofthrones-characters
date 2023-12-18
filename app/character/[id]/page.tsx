@@ -1,6 +1,6 @@
 import Image from "next/image";
 import CHARACTERS from "../../constants/characters.json";
-import { Box, Container, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Center, Container, Grid, GridItem } from "@chakra-ui/react";
 
 const getCharacter = (id: string) => {
   const foundCharacter = CHARACTERS.find(
@@ -26,8 +26,8 @@ export default function CharacterDetailPage({
       {foundCharacter && (
         <div>
           <Container maxW='container.2xl' padding='6' bg='green.50' centerContent>
-            <Grid templateColumns='repeat(2, 1fr)' gap={5}>
-              <GridItem padding='6' ><Image src={foundCharacter.image} width={250} height={300} alt={""} /><br /></GridItem>
+            <Grid templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }} gap={5}>
+              <Center><GridItem padding='6'><Image src={foundCharacter.image} width={250} height={300} alt={""} /><br /></GridItem></Center>
               <GridItem padding='6' >
                 Character: <b>{foundCharacter.name}</b><br />
                 Alternative Names: <b>{foundCharacter.alternate_names[0]}</b><br />

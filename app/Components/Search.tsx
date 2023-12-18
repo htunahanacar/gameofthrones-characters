@@ -33,11 +33,13 @@ function Search() {
                     />
                 </InputGroup>
             </Container>
-                <Grid justifyItems={'center'} templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', xl: 'repeat(3, 1fr)' }} gap={6}>
+            <Center>
+                <Grid templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', xl: 'repeat(3, 1fr)' }} gap={6}>
                     {filteredData.map((character) => (
                         <Card key={character.id} name={character.name} species={character.species} image={character.image} house={character.house} id={character.id} />
                     ))}
                 </Grid>
+            </Center>
         </Stack>
     )
 }
